@@ -1,4 +1,17 @@
- name: CI
+ name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+      - development
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
 on: [push, pull_request]
 
